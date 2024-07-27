@@ -1,0 +1,19 @@
+.standard-button {
+    border: none;
+    border-radius: calc(var(--br)/ 2);
+    width: 200px;
+    height: 40px;
+    color: var(--cl);
+    background: var(--bg); 
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.standard-button.active {
+    border: 1px solid white;
+    opacity: 1;
+}
+
+.standard-button:hover, .standard-button:focus {
+    opacity: 1;
+}

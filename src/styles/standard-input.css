@@ -1,0 +1,131 @@
+.standard-input-container {
+    border: 1px solid var(--bd);
+    border-radius: calc(var(--br) / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 250px;
+    position: relative;
+    overflow: visible;
+}
+
+.standard-input {
+    border: none;  
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    color: var(--cl);
+    background-color: transparent;
+}
+
+.standard-input.search {
+    width: 87%; 
+}
+
+.standard-input-label {
+    position: absolute;
+    left: 4px;
+    top: 10px;
+    transition: 0.2s ease all;
+    padding: 0 5px;
+    background: var(--bg);
+    color: gray;
+}
+
+.standard-input-container .standard-input:valid ~ .standard-input-label, 
+.standard-input-container .standard-input:focus ~ .standard-input-label {
+    transform: translate(0, -15px);
+    font-size: 0.65em;
+    padding: 0 5px;
+    background: var(--bg);
+    color: var(--cl);
+}
+
+.search-icon {
+    width: 10%;
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+
+.standard-checkbox-container {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.standard-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.standard-checkmark {
+    border: 1px solid var(--bd);
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.standard-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.standard-checkbox:checked ~ .standard-checkmark:after {
+    display: block;
+    animation: checkmark-entry 0.3s ease;
+}
+
+.standard-checkbox:not(:checked) ~ .standard-checkmark:after {
+    display: block;
+    opacity: 0;
+    animation: checkmark-exit 0.3s ease;
+}
+
+.standard-checkmark:after {
+    left: 10px;
+    top: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+@keyframes checkmark-entry {
+    0% {
+        transform: scale(0) rotate(45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+@keyframes checkmark-exit {
+    0% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(45deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
+    }
+}
+

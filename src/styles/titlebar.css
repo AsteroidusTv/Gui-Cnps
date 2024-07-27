@@ -1,0 +1,99 @@
+.titlebar {
+    border-radius: var(--br) var(--br) 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--titlebar-height);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titlebar-left, .titlebar-right {
+    width: var(--layout-left);
+    height: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background: var(--sc-bg);
+}
+
+.titlebar-right {
+    width: var(--layout-right);
+    height: 100%;
+    background: var(--bg);
+}
+
+.titlebar-button {
+    border-radius: 50%;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-65px);
+    overflow: hidden;
+    cursor: pointer; 
+}
+  
+.titlebar-button:before, .titlebar-button:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.titlebar-button:hover:before, .titlebar-button:hover:after {
+    top: 50%;
+    opacity: 1;
+}
+
+.titlebar-button.close {
+    border: 2px solid #DC4441;
+    background: #FC5753;
+}
+
+.titlebar-button.close:before, .titlebar-button.close:after {
+    width: 2px;
+    height: 70%;
+    background: #460100;
+}
+
+.titlebar-button.close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+.titlebar-button.close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.titlebar-button.minimise {
+    border: 2px solid #DB9A28;
+    background: #FDBC40;
+}
+
+.titlebar-button.minimise:before {
+    width: 70%;
+    height: 2px;
+    background: #460100;
+ }
+
+.titlebar-button.maximise {
+    border: 2px solid #35363600;
+    background: #B4F8CE1F;
+}
+
+.titlebar-title {
+    font-size: 22.5px;
+    color: var(--cl);
+    text-transform: uppercase;
+    cursor: default;
+}
+
+

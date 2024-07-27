@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "UbuntuSans-Regular";
+    src: url(../fonts/UbuntuSans-Regular.ttf);
+}
+
+:root {
+    --bg: #030637;
+    --sc-bg: #230f52;
+    --br: 15px;
+    --cl: #FFFFFF;
+    --sc-cl: #000000;
+    --bd: #FFFFFF;
+
+    /* Layout */
+    --layout-left: 30%;
+    --layout-right: calc(100% - (var(--layout-left)));
+    --titlebar-height: 45px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: "UbuntuSans-Regular";
+    font-size: 16px;
+    user-select: none; 
+    -webkit-user-select: none;  
+    overflow: auto;
+    outline: none;
+}
+
+html, body {
+    border-radius: var(--br);
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    background: var(--bg);
+}
+
+main {
+    margin-top: var(--titlebar-height);
+    width: var(--layout-right);
+    height: calc(100vh - var(--titlebar-height));
+}

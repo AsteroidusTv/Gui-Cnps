@@ -1,0 +1,10 @@
+.sidebar {
+    margin-top: var(--titlebar-height);
+    width: var(--layout-left);
+    height: calc(100vh - var(--titlebar-height));
+    gap: 7.5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--sc-bg);   
+}

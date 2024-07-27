@@ -1,0 +1,7 @@
+.standard-select {
+    padding-left: 5px;
+    border-radius: calc(var(--br)/ 2);
+    height: 42.5px;
+    width: 251.125px;
+    outline: none;
+}

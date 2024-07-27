@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cnps</title>
+
+  <!-- Scripts -->
+  <script src="./src/scripts/main.ts" type="module" defer></script>
+  <script src="./src/scripts/titlebar.ts" type="module" defer></script>
+  <script src="./src/scripts/createProject.ts" type="module" defer></script>
+  <script src="./src/scripts/pageChange.ts" defer></script>
+  
+  <!-- Standard assets -->
+  <link rel="stylesheet" href="./src/styles/standard-input.css">
+  <link rel="stylesheet" href="./src/styles/standard-button.css">
+  <link rel="stylesheet" href="./src/styles/standard-select.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/styles/styles.css">
+  <link rel="stylesheet" href="./src/styles/sidebar.css">
+  <link rel="stylesheet" href="./src/styles/titlebar.css">
+  <link rel="stylesheet" href="./src/styles/create-section.css">
+  <link rel="stylesheet" href="./src/styles/config-section.css">
+
+
+
+</head>
+<body>
+  <div class="sidebar">
+    <button id="homeButton" class="standard-button sidebar-button">Home</button>
+    <button id="configButton" class="standard-button sidebar-button">Settings</button>
+  </div>
+  <main>
+    <section id="createSection" class="create-section">
+      <form id="createForm" class="create-form" action="createProject">
+        <!-- Project name -->
+        <div class="standard-input-container">
+          <input id="projectName" class="standard-input" type="text" name="projectName">
+          <label for="projectName" class="standard-input-label">Project name</label>
+        </div>
+        <!-- Programming language select -->
+        <select id="languageSelect" class="standard-select" name="language">
+          <option value="Hello">Hello</option>
+          <option value="Bye">Bye</option>
+        </select>
+        <!-- Dependencies selector -->
+        <div class="standard-input-container">
+          <input id="projectDependencies" class="standard-input search" type="text" name="projectDependencies">
+          <img class="search-icon" src="./src/assets/search.png" alt="search icon">
+          <label class="standard-input-label" for="projectDependencies">Project dependencies</label>
+        </div>
+        <!-- Custom query -->
+        <div class="custom-query">
+          <p class="custom-query-text">Custom</p>
+          <label class="standard-checkbox-container">
+            <input class="standard-checkbox" id="customQuery" type="checkbox">
+            <span class="standard-checkmark"></span>
+          </label>
+        </div>
+        <!-- Subfolders select -->
+        <select id="subfolderSelect" class="standard-select" name="subfolder">
+          <option value="Hello">Hello</option>
+          <option value="Bye">Bye</option>
+        </select>
+        <!-- Submit button -->
+        <button id="createButton" class="standard-button create-button" type="submit">Create project</button>
+        <p id="debug" style="color: white;">Hello !</p>
+      </form>      
+    </section>
+    <section id="configSection" class="config-section">
+      <form id="configForm" class="config-form" action="configuration"></form>
+    </section>
+  </main>
+
+  <!-- Titlebar -->
+  <div class="titlebar">
+    <div class="titlebar-left" data-tauri-drag-region>
+      <div id="titlebarButtonClose" class="titlebar-button close"></div>
+      <div id="titlebarButtonMinimize" class="titlebar-button minimise"></div>
+      <div id="titlebarButtonMaximize" class="titlebar-button maximise"></div>
+    </div>
+    <div class="titlebar-right" data-tauri-drag-region> 
+      <h1 class="titlebar-title" data-tauri-drag-region>cnps</h1>
+    </div>
+  </div>
+
+</body>
+</html>
